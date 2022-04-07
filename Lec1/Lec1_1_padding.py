@@ -38,4 +38,7 @@ def Padding_gigi(img_raw, padding_size = 1, flags = 0):
     elif flags == 1:
         return img_raw
 
-        
+# ##test
+# img_test = np.array([[[1,1,1], [2,2,2], [3,3,3]],[[4,4,4], [5,5,5], [6,6,6]],[[7,7,7], [8,8,8], [9,9,9]]])
+# img_padding_test = Padding_gigi(img_test)
+# print(img_padding_test)
