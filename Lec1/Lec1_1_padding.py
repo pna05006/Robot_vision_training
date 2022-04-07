@@ -28,8 +28,8 @@ cv2.imshow("raw", img_raw)
 cv2.waitKey()
 cv2.destroyAllWindows()
 
-def Padding_gigi(img_raw, padding_size, flags = 0):
-    if flags == 0:
+def Padding_gigi(img_raw, padding_size = 1, flags = 0):
+    if flags == 0 and padding_size == 1:
         img_padding = np.insert(img_raw, 0, img_raw[0], axis=0) # 위쪽 패딩
         img_padding = np.insert(img_padding, img_padding.shape[0], img_padding[img_padding.shape[0]-1], axis=0) # 아래쪽 패딩
         img_padding = np.insert(img_padding, 0, img_padding[:,0], axis=1) # 왼쪽 패딩
