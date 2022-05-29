@@ -16,7 +16,6 @@ def get_grayscale(img):
             gray_img[y][x] = img[y][x].mean()
     return gray_img
 
-
 def add_padding(img, padding_size):
     shape = list(img.shape)
     shape[0] += padding_size * 2
