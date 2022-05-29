@@ -148,6 +148,7 @@ def main():
     image_array = [np.array(down_scale(Image.open(x), downscale)) for x in img_name_array]
 
     flow_array = optical_flow(image_array, neighbor_distance)
+    print(flow_array, flow_array.shape)
     display_flow(flow_array)
 
 
