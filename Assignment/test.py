@@ -32,18 +32,7 @@ def main():
     ## Remove letterbox & Padding & conversion to gray_img
     A1_img = gray_conv(padding(rm_letterbox(A1_raw)))
 
-    plt.style.use('default')
-    fig, ax = plt.subplots()
-    ax.add_patch(
-            patches.Arrow(
-                10, 5,
-                10, 5,
-                width=0.3,
-                edgecolor='deeppink',
-                facecolor='lightgray'
-            ))
-    plt.show()
-    return 0
+    print(np.zeros((2,1)).flatten())
 
     cv2.arrowedLine(A1_img, (50,50), (55,55),color=(100,100,110) ,thickness=1)
     plt.imshow(A1_img, cmap='gray')
