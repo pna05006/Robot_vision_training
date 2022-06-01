@@ -26,17 +26,20 @@ def gray_conv(img_raw):
     return img_gray.astype(np.float64)
 
 def main():
-    ## Load Image & down sampling
-    A1_raw = cv2.resize(cv2.imread(filename="chaker.jpg", flags=cv2.IMREAD_COLOR).astype(np.float64), dsize=(480,300)) # 16:10 해상도(480,300) (640, 400)
+    # ## Load Image & down sampling
+    # A1_raw = cv2.resize(cv2.imread(filename="chaker.jpg", flags=cv2.IMREAD_COLOR).astype(np.float64), dsize=(480,300)) # 16:10 해상도(480,300) (640, 400)
 
-    ## Remove letterbox & Padding & conversion to gray_img
-    A1_img = gray_conv(padding(rm_letterbox(A1_raw)))
+    # ## Remove letterbox & Padding & conversion to gray_img
+    # A1_img = gray_conv(padding(rm_letterbox(A1_raw)))
 
-    print(np.zeros((2,1)).flatten())
+    # print(np.zeros((2,1)).flatten())
 
-    cv2.arrowedLine(A1_img, (50,50), (55,55),color=(100,100,110) ,thickness=1)
-    plt.imshow(A1_img, cmap='gray')
-    plt.show()
+    # cv2.arrowedLine(A1_img, (50,50), (55,55),color=(100,100,110) ,thickness=1)
+    # plt.imshow(A1_img, cmap='gray')
+    # plt.show()
+    data_table = np.array([[[11, 12, 13,0],[11, 12, 13,1],[11, 12, 13,3]],[[11, 12, 13,2],[11, 12, 13,4],[11, 12, 13,0]]])
+    mean = np.where(data_table[:,:,3]==0, data_table, 0)
+    print(mean)
 
 
 if __name__ == '__main__':

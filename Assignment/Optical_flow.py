@@ -1,4 +1,3 @@
-import threading
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -74,7 +73,7 @@ def optical_flow(A1_img, A2_img): # A1_img, A2_img 는 padding된 같은 크기�
     for r in range(1, motion_vec.shape[0]-1):
         for c in range(1, motion_vec.shape[1]-1):
             v =  motion_vector(df_dy[r:r+3,c:c+3].flatten(), df_dx[r:r+3,c:c+3].flatten(), df_dt[r:r+3,c:c+3].flatten())
-            if np.linalg.norm(v) > 10: v = [0, 0]
+            if np.linalg.norm(v) > 30: v = [0, 0]
             motion_vec[r,c] = v
     return padding(padding(motion_vec))
 
