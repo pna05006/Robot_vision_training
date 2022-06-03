@@ -43,9 +43,6 @@ def main():
     A1_img = padding(rm_letterbox(A1_raw))
     A2_img = padding(rm_letterbox(A2_raw))
 
-    ## Get edge image
-    # A1_edge_img = dect_edge(gray_conv(A1_img), 30)
-
     ## cal motion vector using optical flow algorithm
     motion_vec_set = np.zeros((A1_img.shape[0], A1_img.shape[1], 3 ,2))
 
@@ -94,12 +91,6 @@ def main():
                     print(count/(mean_shift_info.shape[0]*mean_shift_info.shape[1]), "% pixel pass")
                     break
     print("end")
-
-    # K = 0
-
-    # k_mined_img = data_table[:,:,data_table.shape[2]-1]/(K-1)*255
-    # plt.imshow(k_mined_img, cmap='gray')
-    # plt.show()
 
 if __name__ == '__main__':
     main()
