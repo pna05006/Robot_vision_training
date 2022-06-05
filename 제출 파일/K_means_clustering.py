@@ -24,9 +24,9 @@ def set_datatable(img, motion_vec_img, scale):
 
 ## Picking randomly K points by centroid from the data
 def get_centroids(data, K):
-    centroids = np.empty((K, data.shape[2]))
+    centroids = np.empty((K, data.shape[2]-1))
     for k in range(K):
-        centroids[k] = data[random.randrange(0, data.shape[0]), random.randrange(0, data.shape[1]), 0:data.shape[2]]
+        centroids[k] = data[random.randrange(0, data.shape[0]), random.randrange(0, data.shape[1]), 0:data.shape[2]-1]
     return centroids
 
 ## Assign each object to the cluster with the nearest centroid.
